@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudbelly</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <div class="first_container">
+
+    </div>
+ 
+
+    <div class="second_container">
+        <img id="main_logo" src="../static/images/logo.svg" alt="">
+        <h2>Welcome to the future of delivering food..</h2>
+
+        <div class="input_fields">
+            <form action="/verification" method="post">
+
+                <input type="number" placeholder="Please enter your OTP " name="otp" id="enterInputs" required>
+                <br>
+
+                <div class="sign_up">
+                    <button style="background-color: transparent;border-color:transparent;font-size: x-large;font-weight: 600;" type="submit">Verify OTP</button>
+                </div>
+            </form>
+            <button style="background-color: transparent;border-color:transparent;font-size: x-large;font-weight: 600;" type="submit" @click="send_otp_again()">Send  OTP again</button>
+
+        </div>
+    </div>
+    <div class="third_container">
+
+    </div>
+</body>
+<script>
+function send_otp_again(){
+   console.log("Enter the url /api to send otp again");
+}
+</script>
+
+</html>

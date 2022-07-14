@@ -1,70 +1,109 @@
-.main_body{
-
+.first_container{
     background-color: rgb(221, 159, 51);
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    width: 396px;
+    height: 620px;
+    overflow: hidden;
+    position: static;
 
 }
-.inner_body{
-    background-color: white;
+
+.third_container{
+
+    background-color: rgb(221, 159, 51);
+    position: fixed;
+    width: 396px;
+    /* height: 6vh; */
+    z-index: 1;
+    bottom: -36px;
+    height: 13.5vh;
+    border-radius: 25px;
+    box-shadow:-3px -3px 15px #96939388;
+    border-top-left-radius: 25px 20px;
+    border-top-right-radius: 25px 20px;
+
+}
+.second_container{
+    background-color: #f7f7f7;
+    /* border-radius: 25px; */
     position: absolute;
-    top: 43px;
-    width: -webkit-fill-available;
-    height: 530px;
+    top: 65px;
+    width: 396px;
+    height: 900px;
+    /* overflow: auto; */
     text-align: center;
+    background-color: #f7f7f7;
+    box-shadow:-3px -3px 15px #2c2a2a88;
+    border-top-left-radius: 25px 20px;
+    border-top-right-radius: 25px 20px;
 
 }
 #main_logo{
     position: absolute;
-    left: 12px;
-    top: -55px;
+    left: 40px;
+    top: -20px;
 }
 h2{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
     position: absolute;
-    top: 25vh;
+    width: 240px;
+    margin-left: 75px;
+    top: 28vh;
 }
 .input_fields{
     text-align: center;
     position: absolute;
-    top: 46vh;
-    text-align: center;
+    top: 43vh;
+    /* text-align: center; */
+    left: 60px;
+    /* overflow: hidden; */
+    height: 65vh;
+
 
 }
 #enterInputs{
-    text-align: center;
-    border-radius: 25px;
+    /* text-align: center; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 20px;
+    padding-left: 40px;
     border-color: transparent;
- 
-    height: 30px;
-    width: 235px;
+    height: 61.26px;
+    width: 250px;
     margin-top: 25px;
-    box-shadow: 0px 5px 5px #e1dcdc;
+    /* box-shadow:inset 5px 7px 12px #c50a0add; */
+    /* box-shadow: 0.5px 5px 15px -12px grey; */
+    box-shadow: 3px 5px 10px rgb(39 36 36 / 9%), -7px -8px 8px #ffffffb8;
+    ;
+    margin-left: -10px;
 
 }
 #orangeButtons{
-    color: rgb(221, 159, 51);
+    color: #bb5104;
     background-color: transparent;
-    border-radius: 25px;
-    height: 20px;
-    width: 70px;
-    text-align: center;
+    border-radius: 20px;
+    height: 0px;
+    width: 80px;
+    text-align: left;
     cursor: pointer;
 
 }
+
 #orangeButtons:hover{
-    background-color: black;
+    background-color: #faab23;
     cursor: pointer;
 }
 .sign_up{
-color: black;
+color: #f7f7f7;
 z-index: 2;
 position: fixed;
-font-weight: 600;
+font-weight: 1000;
 text-align: center;
-bottom: 15px;
-left: 21vh;
+bottom:  2.5vh;
+left: 17vh;
+
 cursor: pointer;
 }
