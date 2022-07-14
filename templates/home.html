@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudbelly</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <div class="main_body">
+        <div class="signIn_button">
+            <span style="
+            position: absolute;
+            top: 45px;
+            z-index: 2;
+            right: 10px;
+            " id="orangeButtons">Sign in</span>
+        </div>
+
+        <div class="inner_body">
+            <img id="main_logo" src="../static/images/logo.svg" alt="">
+            <h2>Welcome to the future of delivering food..</h2>
+        </div>
+        <div class="input_fields">
+            <form action="/sign_in" method="post">
+
+                <input type="number" placeholder="Enter your phone number" name="phone_no" id="enterInputs" required>
+                <span style="
+                    z-index: 4;
+    color: black;
+    position: absolute;
+    top: 34px;
+    left: 55px;
+    opacity: 0.7;
+                ">+91</span>
+                <input type="number" placeholder="Enter OTP" name="enter_otp" id="enterInputs" required>
+                <span class="sendOtp" style="    position: absolute;
+            top: 15vh;
+            left: 34vh;" id="orangeButtons"> Send OTP</span>
+                <input type="password" placeholder="Type Password" name="password" id="enterInputs" required>
+                <input type="password" placeholder="Confirm Password" name="confirmPassword" id="enterInputs" required>
+                <div class="sign_up">
+                    <button style="background-color: transparent;border-color:transparent" type="submit">Sign Up</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
