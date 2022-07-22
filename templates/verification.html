@@ -29,7 +29,7 @@
                     <button style="background-color: transparent;border-color:transparent;font-size: x-large;font-weight: 600;" type="submit">Verify OTP</button>
                 </div>
             </form>
-            <button style="background-color: transparent;border-color:transparent;font-size: x-large;font-weight: 600;" type="submit" @click="send_otp_again()">Send  OTP again</button>
+         <a href="{{url_for('send_otp_again')}}">   <button style="cursor: pointer;background-color: transparent;border-color:transparent;font-size: x-large;font-weight: 600;" type="submit" >Send  OTP again</button></a>
 
         </div>
     </div>
@@ -38,9 +38,7 @@
     </div>
 </body>
 <script>
-function send_otp_again(){
-   console.log("Enter the url /api to send otp again");
-}
+
 </script>
 
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloudbelly | Sign up</title>
+    <title>Cloudbelly</title>
     <link rel="stylesheet" href="../static/style.css">
 </head>
 
@@ -14,13 +14,13 @@
 
     </div>
     <div class="signIn_button">
-        <a href="{{url_for('sign_in')}}"><span style="
+        <a href="{{url_for('home')}}"><span  style="
             position: absolute;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             top: 80px;
             z-index: 2;
             right: -15px;
-            " id="orangeButtons">Sign in</span></a>
+            " id="orangeButtons">Sign up</span></a>
     </div>
 
 
@@ -29,20 +29,26 @@
         <h2>Welcome to the future of delivering food..</h2>
 
         <div class="input_fields">
-            <form action="/sign_up" method="post">
+            <form action="/sign_in" method="post">
 
                 <input type="number" placeholder="Enter your phone number" name="phone_no" id="enterInputs" required>
                 <br>
 
-                <input type="email" placeholder="Enter your email" name="enter_email" id="enterInputs" required>
+                
+                <input type="password" placeholder="Type Password" name="password" id="enterInputs" >
                 <br>
-               
-                <input type="password" placeholder="Type Password" name="password" id="enterInputs" required>
-                <br>
-                <input type="password" placeholder="Confirm Password" name="confirmPassword" id="enterInputs" required>
-                <br>
+
+                <span>
+                    Forgot Password ...Don't Worry You Can also login via your whatsapp
+
+                </span>
+                <a href="{{url_for('send_otp_again')}}">   <button style="cursor:pointer;background-color: transparent;border-color:transparent;font-size: x-large;font-weight: 600;" type="submit" >Send  OTP  </button></a>
+
+                
+
+                            
                 <div class="sign_up">
-                    <button style="background-color: transparent;border-color:transparent;font-size: x-large;font-weight: 600;" type="submit">Send OTP</button>
+                    <button style="cursor:pointer;background-color: transparent;border-color:transparent;font-size: x-large;font-weight: 600;" type="submit">Sign In</button>
                 </div>
             </form>
 
@@ -52,6 +58,8 @@
 
     </div>
 </body>
+<script>
 
+</script>
 
 </html>

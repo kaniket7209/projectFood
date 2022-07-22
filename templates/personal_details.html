@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudbelly | Personal Details</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <div class="first_container">
+
+    </div>
+
+
+
+    <div class="second_container">
+        <h3>Create your own Identity</h3>
+        <div class="personal_details_input">
+            <form action="/personal_details" method="post" enctype="multipart/form-data">
+                <label class="logo" for="logo">
+                    + 
+                    <input id="logo" name="storeLogo" type="file" accept="image/png, image/jpg, image/gif, image/jpeg"/>
+                  </label>
+                <div class="storeName">
+
+                    <input type="text" placeholder="Your name/ Store name" name="storeName" id="" required>
+                    <br>
+                    <input type="text" placeholder="Your tagline" name="tagline" id="">
+                </div>
+                <div class="bio">
+                    <label class="category" for="category">Select category</label>
+                    <select class="category" name="category" id="" required>
+                        <option value="1">Restaurant</option>
+                        <option value="2">Cloud Kitchen</option>
+                        <option value="3">Stall</option>
+                        <option value="4">Content Creator</option>
+                        <option value="5">Home Kitchen</option>
+                    </select>
+                    <input type="text" placeholder="Bio" name="bio" id="">
+                </div>
+                <br>
+                <span>
+                    Contact Information
+                </span>
+                <div class="Contact_info">
+
+                    <input type="text" name="phone_no" placeholder="Phone number" required>
+                    <input type="text" name="whatsapp_no" placeholder="Whatsapp number" required>
+                    <input type="text" name="address" placeholder="Address" required>
+                    <input type="text" name="store_timing" placeholder="Store Timing" required>
+                </div>
+
+                <div class="sign_up">
+                    <button
+                        style="cursor:pointer;background-color: transparent;border-color:transparent;font-size: x-large;font-weight: 600;text-align: center;"
+                        type="submit">Document verification</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="third_container">
+
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>
