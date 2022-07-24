@@ -1,7 +1,6 @@
 import mysql.connector
 import logging
 
-
 def dbConnection():
     mydb = mysql.connector.connect(
     host="localhost", # replace with "Database url for deployment"
