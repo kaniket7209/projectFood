@@ -8,6 +8,17 @@
     <title>Cloudbelly | Personal Details</title>
     <link rel="stylesheet" href="../static/style.css">
 </head>
+<style>
+    .store {
+        border-color: transparent;
+        background-color: transparent;
+    }
+
+    input {
+        width: 300px;
+        height: 47px;
+    }
+</style>
 
 <body>
     <div class="first_container">
@@ -20,19 +31,22 @@
         <h3>Create your own Identity</h3>
         <div class="personal_details_input">
             <form action="/personal_details" method="post" enctype="multipart/form-data">
-                <label class="logo" for="logo">
-                    + 
-                    <input id="logo" name="storeLogo" type="file" accept="image/png, image/jpg, image/gif, image/jpeg"/>
-                  </label>
+                <label for="logo">
+                    <span><img class="logo" src="../static//icons/add.svg" alt=""></span>
+                    <input id="logo" name="storeLogo" type="file"
+                        accept="image/png, image/jpg, image/gif, image/jpeg" />
+                </label>
                 <div class="storeName">
 
-                    <input type="text" placeholder="Your name/ Store name" name="storeName" id="" required>
+                    <input style="font-weight: 550;font-size:18px" type="text" class="store"
+                        placeholder="Your name/ Store name" name="storeName" id="" required>
                     <br>
-                    <input type="text" placeholder="Your tagline" name="tagline" id="">
+                    <textarea style="border-color:transparent ; background-color: transparent;" name="tagline"
+                        placeholder="Your tagline" id="" cols="1" rows="3"></textarea>
                 </div>
                 <div class="bio">
-                    <label class="category" for="category">Select category</label>
                     <select class="category" name="category" id="" required>
+                        <option value="0">Select category</option>
                         <option value="1">Restaurant</option>
                         <option value="2">Cloud Kitchen</option>
                         <option value="3">Stall</option>

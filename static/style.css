@@ -98,6 +98,7 @@ h2{
     align-content: center;
     justify-content: center;
     align-items: center;
+    margin-top: 25px;
 }
 .Contact_info{
     display: flex;
@@ -130,20 +131,35 @@ cursor: pointer;
     position: absolute;
     text-align: center;
     left: 40px;
-    top: 10vh;
+    top: 6vh;
 }
 #logo{
    display: none;
 }
-.logo{
-    position: absolute;
-    left: -22px;
-    top: 12px;
-    border-style: solid;
-    border-radius: 25px;
-    width: 17px;
-    border-width: 1px;
-}
+/*  */
 label{
     cursor: pointer;
+}
+.storeName{
+    
+    position: absolute;
+    left: 10vh;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    line-height: 0
+
+}
+
+.logo{
+    /* position: absolute; */
+margin-right: 200px;
+}
+.bio .category{
+    width: 310px;
+    height: 47px;
+}
+.bio input{
+    margin-top: 5px;
 }
