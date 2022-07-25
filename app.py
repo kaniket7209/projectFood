@@ -3,7 +3,7 @@ from unicodedata import category
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import logging
 from werkzeug.utils import secure_filename
-import os
+import os     
 from functools import wraps
 import json
 import requests
