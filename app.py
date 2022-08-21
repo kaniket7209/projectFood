@@ -1,7 +1,9 @@
 
+from multiprocessing import reduction
 from unicodedata import category
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import logging
+from sympy import primenu
 from werkzeug.utils import secure_filename
 import os     
 from functools import wraps
@@ -219,12 +221,86 @@ def personal_details():
             "phone_no": request.form['phone_no'],
             "whatsapp_no": request.form['whatsapp_no'],
             "address": request.form['address'],
-            "store_timing": request.form['store_timing_start'],
+            "store_timing_start": request.form['store_timing_start'],
             "store_timing_end": request.form['store_timing_end'],
         }
         print(personal_details_json)
+        from dbConnection import createTableUserPersonaalDetails
+        createTableUserPersonaalDetails()
+        
+        #save image also
+        insertQuery = """INSERT into registered_users_info (storeNav 
+        val = (personal_details_json['storeName'],personal_details_json['tagline'],personal_details_json['category'],personal_details_json['phone_no'],personal_details_json['whatsapp_no'],personal_details_json['address'],personal_details_json['store_timing_start'],personal_details_json['store_timing_end'])"""
+        
+        # cur.execute(insertQuery,val)
+        # mydb.commit()
+        # write logic that if data is entered in a db then only show rge next page for document verification 
+        return redirect(url_for('document_verification'))
+        
     return render_template('personal_details.html')
 
+
+@app.route('/document_verification', methods=["POST", "GET"])
+@is_logged_in
+def document_verification(): 
+    if request.method == 'POST':
+        print(1)
+        saveImageDirPath = os.path.join(os.getcwd(), 'static/Document_verification')
+        adhar_card_photo = request.files
+        trade_licence = request.files['trade_licence']
+        food_licence = request.files['food_licence']
+        print(adhar_card_photo)
+        print(trade_licence)
+        print(food_licence)
+        account_no = request.form['account_no']
+        files = request.files.getlist('files[]')
+        print(files)
+        # change the logic as per frontend-> deoends how r u accepting the images and format
+        ##uncomment this or change logic
+        # if not trade_licence or food_licence or adhar_card_photo: 
+        #     print("Please enter all the fields")
+        #     return redirect(url_for('document_verification'))
+        # if adhar_card_photo:
+            
+        #     adhar_card_photo.save(os.path.join(saveImageDirPath,
+        #                 secure_filename(adhar_card_photo.filename)))
+        # if trade_licence:
+        #     trade_licence.save(os.path.join(saveImageDirPath,
+        #                 secure_filename(trade_licence.filename)))
+            
+        # if food_licence:
+            
+        #     food_licence.save(os.path.join(saveImageDirPath,
+        #                 secure_filename(food_licence.filename)))
+        
+        #save above to the database
+         
+        print(account_no,"------262")
+        # write the check here if all data inserted into the database then only redirect to the next page
+        return redirect(url_for('bankDetails'))
+        
+    return render_template('document_verification.html')
+   
+
+@app.route('/bank_details', methods=["POST", "GET"])
+def bankDetails():
+    if request.method == 'POST':
+        account_no = request.form['account_no']
+        confirm_account_no = request.form['confirm_account_no']
+        bank_name = request.form['bank_name']
+        ifsc_code = request.form['ifsc_code']
+        upi_id = request.form['upi_id']
+        print(account_no,confirm_account_no)
+        
+        if not account_no  == confirm_account_no:
+            return redirect(url_for('bankDetails'))
+        
+        return redirect(url_for('landingPage'))
+    return render_template('banking_details.html')    
+
+@app.route('/landingPage')
+def landingPage():
+    return render_template('landingPage.html')    
 
 @app.route("/logout/")
 @is_logged_in

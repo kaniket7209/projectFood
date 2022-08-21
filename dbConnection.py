@@ -31,6 +31,20 @@ def createTableRegisterInfo():
     except Exception as e:
         logging.warning(e)
         return
+
+def createTableUserPersonaalDetails():
+    try:
+        mydb = dbConnection()
+        mydb.reconnect()
+        cur = mydb.cursor()
+        query = """CREATE TABLE IF not exists users_personal_info( user_id INT NOT NULL AUTO_INCREMENT ,storeName VARCHAR(200),  tagline VARCHAR(500),category VARCHAR(100),phone_no VARCHAR(13),whatsapp_no VARCHAR(13),address VARCHAR(100),store_timing_start VARCHAR(100),store_timing_end VARCHAR(100), PRIMARY KEY(user_id));"""
+        cur.execute(query)
+        mydb.commit()
+        cur.close()
+        return True
+    except Exception as e:
+        logging.warning(e)
+        return
         
     
     

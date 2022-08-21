@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudbelly | Banking Details</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<style>
+    .store {
+        border-color: transparent;
+        background-color: transparent;
+    }
+
+    input {
+        width: 300px;
+        height: 47px;
+    }
+</style>
+
+<body>
+    <div class="first_container">
+
+    </div>
+
+
+
+    <div class="second_container">
+        <h3 style="margin-top: 15px;">Please feed us your banking details to serve you the </h3>
+        <h3 style="    text-align: initial;
+        margin-left: 53px;
+        color: #faab23;">fastest</h3>
+        <div class="document_verification">
+            <form action="/bank_details" method="post" enctype="multipart/form-data">
+
+
+                <div class="documents">
+
+                    <input type="text" name="account_no" placeholder=" Account Number" required>
+                    <input type="text" name="confirm_account_no" placeholder="Confirm Account Number" required>
+                    <input type="text" name="bank_name" placeholder="Bank Name" required>
+                    <input type="text" name="ifsc_code" placeholder="IFSC Code" required>
+                    <input type="text" name="upi_id" placeholder="UPI ID" required>
+                   
+                </div>
+
+                <div class="sign_up">
+                    <button
+                        style="cursor:pointer;background-color: transparent;border-color:transparent;font-size: x-large;font-weight: 600;text-align: center;"
+                        type="submit">My Profile</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="third_container">
+
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>
