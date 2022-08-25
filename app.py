@@ -14,18 +14,18 @@ app = Flask(__name__)
 # ----DB CHECK
 
 
-def checkDbConnection():
-    from dbConnection import dbConnection
-    mydb = dbConnection()
-    if mydb:
-        print("Connected to db")
-        return mydb
-    else:
-        logging.warning("Please connect database first")
-        return
+# def checkDbConnection():
+#     from dbConnection import dbConnection
+#     mydb = dbConnection()
+#     if mydb:
+#         print("Connected to db")
+#         return mydb
+#     else:
+#         logging.warning("Please connect database first")
+#         return
 
 
-mydb = checkDbConnection()
+# mydb = checkDbConnection()
 
 # ---------
 
