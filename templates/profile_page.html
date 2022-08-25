@@ -390,7 +390,7 @@
     }
 
     .profilepage-menu-text18 {
-        top: 423px;
+        top: 400px;
         left: 156px;
         color: rgba(56, 56, 56, 1);
         height: auto;
@@ -415,7 +415,7 @@
         height: 62px;
         display: flex;
         padding: 0;
-        position: absolute;
+        /* position: absolute; */
         align-self: auto;
         box-sizing: border-box;
         align-items: flex-start;
@@ -464,10 +464,10 @@
     }
 
     .profilepage-menu-text20 {
-        left: 81px;
+        margin-left: 81px;
+       
         color: rgba(230, 174, 53, 1);
         height: auto;
-        position: absolute;
         font-size: 20px;
         align-self: auto;
         font-style: Bold;
@@ -480,11 +480,12 @@
     }
 
     .profilepage-menu-text22 {
-        top: 26px;
-        left: 82px;
+       display: flex;
+       margin-left: 90px;
+        margin-top: 5px;
         color: rgba(56, 56, 56, 1);
         height: auto;
-        position: absolute;
+   
         font-size: 15px;
         align-self: auto;
         font-style: Light;
@@ -800,17 +801,6 @@
         text-decoration: none;
     }
 
-    .profilepage-menu-whats-app {
-        top: 271px;
-        left: 49px;
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        box-sizing: border-box;
-        border-color: transparent;
-        margin-right: 0;
-        margin-bottom: 0;
-    }
 
     .profilepage-menu-whats-app1 {
         top: 271px;
@@ -822,6 +812,7 @@
         border-color: transparent;
         margin-right: 0;
         margin-bottom: 0;
+        cursor: pointer;
     }
 
     .profilepage-menu-shop-location {
@@ -848,16 +839,16 @@
         margin-bottom: 0;
     }
 
-    .profilepage-menu-shopping-bag-full1 {
-        top: 595px;
-        left: 341px;
+    .bag-full {
+        
         width: 30px;
         height: 30px;
-        position: absolute;
         box-sizing: border-box;
         border-color: transparent;
-        margin-right: 0;
-        margin-bottom: 0;
+        position: absolute;
+        right: 0;
+        margin-top: -40px;
+        cursor: pointer;
     }
 
     .profilepage-menu-shopping-bag-full2 {
@@ -988,72 +979,29 @@
 
 
                 <span class="profilepage-menu-text18"><span>Categories</span></span>
-                <div class="profilepage-menu-group87">
-                    <div class="profilepage-menu-group60">
-                        <img src="" alt="" class="profilepage-menu-rectangle11" />
-                    </div>
-                    <span class="profilepage-menu-text20"><span>Veg Biryani</span></span>
-                    <span class="profilepage-menu-text22">
-                        <span>
-                            <span>A plate full of love and health.</span>
-                            <br />
-                            <span>It’s enough to fullfill your dai...</span>
-                        </span>
-                    </span>
-                </div>
-                <div class="profilepage-menu-group86">
-                    <div class="profilepage-menu-group61">
-                        <img src="" alt="" class="profilepage-menu-rectangle111" />
-                    </div>
-                    <span class="profilepage-menu-text27"><span>Veg Biryani</span></span>
-                    <span class="profilepage-menu-text29">
-                        <span>
-                            <span>A plate full of love and health.</span>
-                            <br />
-                            <span>It’s enough to fullfill your dai...</span>
-                        </span>
-                    </span>
-                </div>
-                <div class="profilepage-menu-group85">
-                    <div class="profilepage-menu-group62">
-                        <img src="" alt="" class="profilepage-menu-rectangle112" />
-                    </div>
-                    <div class="profilepage-menu-group82">
-                        <span class="profilepage-menu-text34"><span>Veg Biryani</span></span>
-                        <span class="profilepage-menu-text36">
-                            <span>
-                                <span>A plate full of love and health.</span>
-                                <br />
-                                <span>It’s enough to fullfill your dai...</span>
-                            </span>
-                        </span>
-                    </div>
-                </div>
-                <div class="profilepage-menu-group84">
-                    <div class="profilepage-menu-group63">
-                        <img src="" alt="" class="profilepage-menu-rectangle113" />
-                    </div>
-                    <div class="profilepage-menu-group83">
-                        <span class="profilepage-menu-text41"><span>Veg Biryani</span></span>
-                        <span class="profilepage-menu-text43">
-                            <span>
-                                <span>A plate full of love and health.</span>
-                                <br />
-                                <span>It’s enough to fullfill your dai...</span>
-                            </span>
-                        </span>
-                    </div>
-                </div>
+                <div class="item_list">
 
-                <img src="/static/icons/whatsappIcon.svg" alt="WhatsApp4837" class="profilepage-menu-whats-app1" />
+                    {% for i in listOfItems %}
+                    <!-- {{ i }} -->
+                    <div class="item">
+                        <div class="img_item_box">
+                            <img src="{{i.logo}}" alt="" class="img_item" />
+                        </div>
+                        <span class="profilepage-menu-text20"><span>{{i.name}}</span></span>
+                        <span class="profilepage-menu-text22">
+                            <span>
+                                <span>{{i.Tagline}}</span>
+                                
+                            </span>
+                        </span>
+                        <img src="/static/icons/bag.svg" alt="" class="bag-full" />
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <img src="/static/icons/whatsappIcon.svg"  class="profilepage-menu-whats-app1" />
                 <img src="/static/icons/shopIcon.svg" alt="ShopLocation4835" class="profilepage-menu-shop-location" />
-                <img src="/static/icons/bag.svg" alt="ShoppingBagFull5539" class="profilepage-menu-shopping-bag-full" />
-                <img src="/static/icons/bag.svg" alt="ShoppingBagFull5539"
-                    class="profilepage-menu-shopping-bag-full1" />
-                <img src="/static/icons/bag.svg" alt="ShoppingBagFull5539"
-                    class="profilepage-menu-shopping-bag-full2" />
-                <img src="/static/icons/bag.svg" alt="ShoppingBagFull5539"
-                    class="profilepage-menu-shopping-bag-full3" />
+        
 
 
                 <div class="checkout">
@@ -1068,6 +1016,23 @@
     .checkout {
         position: absolute;
         bottom: 0;
+    }
+    .item_list{
+        
+    position: absolute;
+    top: 395px;
+    width: 390px;
+    height: auto;
+
+    }
+    .item{
+        margin-top: 60px;
+    }
+    .img_item{
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
     }
 </style>
 
