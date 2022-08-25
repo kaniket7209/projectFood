@@ -200,7 +200,7 @@ categoryJson = {
 
 
 @app.route('/personal_details', methods=["POST", "GET"])
-@is_logged_in
+# @is_logged_in
 def personal_details():
     if request.method == "POST":
         # required fields
@@ -239,7 +239,7 @@ def personal_details():
 
 
 @app.route('/document_verification', methods=["POST", "GET"])
-@is_logged_in
+# @is_logged_in
 def document_verification(): 
     if request.method == 'POST':
         print(1)
@@ -323,7 +323,9 @@ def profile():
     
     return render_template('profile_page.html',storeName=storeName,tagline= tagline,followers = followers,followings=followings)
     
-
+@app.route('/testing')
+def test():
+    return render_template('test.html')
 
 @app.route("/logout/")
 @is_logged_in
