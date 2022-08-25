@@ -1,9 +1,7 @@
 
-from multiprocessing import reduction
-from unicodedata import category
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import logging
-from sympy import primenu
+
 from werkzeug.utils import secure_filename
 import os     
 from functools import wraps
@@ -290,17 +288,42 @@ def bankDetails():
         bank_name = request.form['bank_name']
         ifsc_code = request.form['ifsc_code']
         upi_id = request.form['upi_id']
-        print(account_no,confirm_account_no)
         
         if not account_no  == confirm_account_no:
+            print("Redirecting to the same page as account no doesnt matched")
             return redirect(url_for('bankDetails'))
+        print(account_no,confirm_account_no, bank_name)
+        # save all data to the database ..
         
-        return redirect(url_for('landingPage'))
+        # for now we are showing landing page-> we'll work on it later rather showing profile page 
+        return redirect(url_for('profile'))
+        # return redirect(url_for('landingPage'))
+    
     return render_template('banking_details.html')    
 
+#will work on this later after we have ui for this ready
 @app.route('/landingPage')
 def landingPage():
     return render_template('landingPage.html')    
+
+@app.route('/profile')
+def profile():
+    # fetch storename and store logo from the database for this user:
+    # for now taking it as static
+    storeName = '''Aniket's Kitchen'''
+    storelogo = r'C:\Users\Win10\Desktop\projecFood\static\icons\storeLogo.svg'
+    tagline = '''Ghar ka khana, ab ghar se!'''
+    # fetch followers and followings as per logic later
+    followers = 545
+    followings= 643
+    
+    
+    
+    
+    
+    return render_template('profile_page.html',storeName=storeName,tagline= tagline,followers = followers,followings=followings)
+    
+
 
 @app.route("/logout/")
 @is_logged_in
