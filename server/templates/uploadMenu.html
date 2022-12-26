@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudbelly</title>
+</head>
+<body>
+    <h1>Upload your menu and let AI do, the rest all of your work</h1>
+   
+    <form method="POST" enctype="multipart/form-data" action="/menu-update">
+        <input type="file" id="imgInp" name="uploaded-file" accept=".jpg,.png" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+        <input id="output" onclick="loadImage" type="submit" value="Submit">
+    </form>
+    <img id="blah"  width="650"  />
+</body>
+<script>
+    
+</script>
+</html>

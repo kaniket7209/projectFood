@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+</head>
+<style>
+    img{
+        display: block;
+        width: 500px;
+        height: auto;
+        max-width: 100%;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+    }
+    #category_name{
+        margin: 0 5px;
+        
+    }
+</style>
+<body>
+  
+    <div class="container">
+        <div>
+            <img src="/images/a.jpg" id="image" alt="">
+        </div>
+        <img src="" alt="" id="name">
+        <img src="" alt="" id="menu">
+    </div>
+    <button id="category_name">Select Category Name</button>
+    <button id="category_menu">Select Category Menu</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+</body>
+<script>
+const image = document.getElementById('image');
+const cropper = new Cropper(image,{
+    aspectRatio:0,
+    viewMode:0
+})
+
+document.getElementById('category_name').addEventListener('click',function(){
+    var croppedImage = cropper.getCroppedCanvas().toDataURL("image/png")
+    document.getElementById('name').src = croppedImage;
+    document.getElementById('name').style.cssText=`    height:20%   `
+    document.getElementById('category_name').style.cssText=`    background: green  `
+})
+document.getElementById('category_menu').addEventListener('click',function(){
+    var croppedImage = cropper.getCroppedCanvas().toDataURL("image/png")
+    document.getElementById('menu').src = croppedImage;
+    document.getElementById('menu').style.cssText=`
+    height:50%`;
+    document.getElementById('category_menu').style.cssText=`    background: green  `
+})
+</script>
+
+</html>
